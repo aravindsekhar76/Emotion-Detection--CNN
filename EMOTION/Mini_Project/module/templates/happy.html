@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Emotion wellness Partner</title>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          margin: 0;
+          padding: 20px;
+      }
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      .task-card {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .task-card h2 {
+          margin-bottom: 20px;
+          color: #333;
+      }
+      .task-card p {
+          margin-bottom: 10px;
+          color: #666;
+      }
+      .task-card ul {
+          margin-bottom: 20px;
+          padding-left: 20px;
+          list-style-type: disc;
+      }
+      .task-card li {
+          margin-bottom: 10px;
+      }
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .centered-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+      </style>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'ramapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'ramapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'ramapp/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'ramapp/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'ramapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'ramapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/style.css' %}">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <!--<script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
+
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'home' %}">Emotion wellness<span> Partner</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="doctors.html" class="nav-link">Professional Support</a></li>  
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta"><a href="{% url 'getstart' %}" class="nav-link"><span>Get Start</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav-->
+    <section class="home-slider owl-carousel">
+        <div class="slider-item bread-item" style="background-image: url({% static 'ramapp/images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container" data-scrollax-parent="true">
+            <div class="row slider-text align-items-center justify-content-center">
+              <div class="col-md-7 col-sm-12 ftco-animate text-center">
+                <h1 class="mb-3">You are feeling happy today</h1>
+                <p>You can either choose music or task to enhance your emotion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+          
+        <section class="ftco-section">
+          <div class="container">
+            <div class="row d-md-flex">
+              <div class="col-md-6 ftco-animate img about-image order-md-last" style="background-image: url(images/about.jpg);">
+              </div>
+              <div class="col-md-6 ftco-animate pr-md-5 order-md-first">
+                <div class="row">
+                  <div class="col-md-12 nav-link-wrap mb-5">
+                    <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">               
+
+                      <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Music</a>
+                      <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Task</a>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12 d-flex align-items-center">
+                    
+                    <div class="tab-content ftco-animate" id="v-pills-tabContent">
+    
+                      <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                        <div>
+                          <h2 class="mb-4">Relax yourself by listening to the following</h2>
+                          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EVJSvZp5AOML2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>                        </div>
+                      </div>
+    
+                      <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+                        <div>
+                          <h2 class="mb-4">Tasks for Enhancing Emotion</h2>
+
+                          <div class="task-card">
+                            <h2>Task 1: Play some online Games</h2>
+                            <p>Playing games will help you to get relaxed</p>
+                            <button onclick="location.href='https://poki.com/'" style="font-size: 16px; padding: 10px 20px; border-radius: 8px; background-color: #007bff; color: #fff;">Play Game</button>
+                          </div>
+
+                          <div class="task-card">
+                            <h2>Task 1: Smile and Laugh</h2>
+                            <p>Find something humorous or think of a joyful memory to bring a smile to your face and lighten your mood.Try the following:</p>
+                            <ul>
+                              <li>Share a humorous experience with a friend or family member to enjoy a laugh together</li>
+                              <li>Browse through a collection of jokes or memes that tickle your funny bone</li>
+                              <li>Look up laughter yoga exercises and engage in hearty laughter, even if it starts as forced laughter, it can turn into genuine laughter</li>
+                            </ul>
+                          </div>
+                    
+                          <div class="task-card">
+                            <h2>Task 2:Connect with Nature </h2>
+                            <p>Step outside and take a few moments to enjoy the beauty of nature.Consider the following practices:</p>
+                            <ul>
+                              <li>Take a leisurely stroll in a nearby park, forest, or nature reserve to immerse yourself in the natural environment</li>
+                              <li>Find a riverbank, lake, or ocean spot and sit quietly, observing the water and allowing its calming effect to soothe your mind</li>
+                              <li>Start a small garden, whether it's flowers, herbs, or vegetables, and enjoy the satisfaction of nurturing and witnessing growth</li>
+                            </ul>
+                          </div>
+                    
+                          <div class="task-card">
+                            <h2>Task 3: Connect with Loved Ones</h2>
+                            <p>Social support and connection with loved ones can provide comfort and uplift your mood. Take the following steps:</p>
+                            <ul>
+                              <li>Arrange a meet-up or video call with a close friend or family member.</li>
+                              <li>Join a community or support group where you can share your feelings.</li>
+                              <li>Participate in social activities or volunteer for a cause you care about.</li>
+                            </ul>
+                          </div>
+                          <div style="display: flex; justify-content: center;">
+                            <button onclick="location.href='rate.html'" style="font-size: 20px; padding: 15px 30px; border-radius: 10px; background-color: #007bff; color: #fff;">Finish</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>          
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Emotion Wellness Partner</h2>
+              <p>You don't have to be positive all the time. It's perfectly okay to feel sad, angry, annoyed, frustrated, anxious, or scared. Having feelings doesn't make you a negative person. It makes you human.</p>
+            </div>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">About</a></li>
+              <li><a href="services.html" class="py-2 d-block">Services</a></li>
+              <li><a href="doctors.html" class="py-2 d-block">Professional Support</a></li>          
+              <li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <script src="{% static 'ramapp/js/jquery.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/popper.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/aos.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'ramapp/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/scrollax.min.js' %}"></script>
+  <script src="{% static 'ramapp/js/google-map.js' %}"></script>
+  <script src="{% static 'ramapp/js/main.js' %}"></script>
+    
+  </body>
+</html>

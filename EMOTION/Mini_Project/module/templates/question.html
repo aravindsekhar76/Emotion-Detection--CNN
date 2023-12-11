@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Emotion wellness Partner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <link rel="stylesheet" href="{% static 'ramapp/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/animate.css' %}">   
+    <link rel="stylesheet" href="{% static 'ramapp/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'ramapp/css/style.css' %}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var selectElements = document.querySelectorAll("select");
+      selectElements.forEach(function(selectElement) {
+        selectElement.addEventListener("change", function() {
+          selectElement.classList.add("answered");
+        });
+      });
+    });
+  
+    function calculateEmotion() {
+      var answer1 = document.getElementById("answer1").value;
+      var answer2 = document.getElementById("answer2").value;
+      var answer3 = document.getElementById("answer3").value;
+      var answer4 = document.getElementById("answer4").value;
+      var answer5 = document.getElementById("answer5").value;
+      var answer6 = document.getElementById("answer6").value;
+
+      var happy=0;
+      var sad=0;
+      var calm=0;
+      var emotion;
+
+      if (answer1 === "option1"){happy++;}
+      else if (answer1 === "option2"){sad++;}
+      else {calm++;}
+
+      if (answer2 === "option1"){happy++;}
+      else if (answer2 === "option2"){sad++;}
+      else {calm++;}
+
+      if (answer3 === "option1"){happy++;}
+      else if (answer3 === "option2"){sad++;}
+      else {calm++;}
+
+      if (answer4 === "option1"){happy++;}
+      else if (answer4 === "option2"){sad++;}
+      else {calm++;}
+
+      if (answer5 === "option1"){happy++;}
+      else if (answer5 === "option2"){sad++;}
+      else {calm++;}
+
+      if (answer6 === "option1"){happy++;}
+      else if (answer6 === "option2"){sad++;}
+      else {calm++;}
+
+      if(happy>sad && happy>calm)
+      {
+        emotion = "Happy";
+        window.location.href = "happy.html";
+      }
+      if(sad>happy && sad>calm)
+      {
+        emotion = "Sad";
+        window.location.href = "sad.html";
+      }
+      if(calm>happy && calm >sad)
+      {
+        emotion = "Calm";
+        window.location.href = "neutral.html";
+      }
+      localStorage.setItem("emotion", emotion);
+    }
+  </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'home' %}">Emotion wellness<span> Partner</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="doctors.html" class="nav-link">Professional Support</a></li>  
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta"><a href="{% url 'getstart' %}" class="nav-link"><span>Get Start</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+        <div class="slider-item bread-item" style="background-image: url({% static 'ramapp/images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container" data-scrollax-parent="true">
+            <div class="row slider-text align-items-end">
+              <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+                <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> <span>Services</span></p>
+                <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Our Service Keeps you Smile</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <h1>Emotion Questionnaire</h1>
+  
+  <form>
+    <label for="answer1">Question 1: How do you feel today?</label>
+    <select id="answer1" required>
+      <option value="">Please select</option>
+      <option value="option1">Good</option>
+      <option value="option2">Bad</option>
+      <option value="option3">okay</option>
+    </select>
+
+    <br>
+
+    <label for="answer2">Question 2: How would you rate your energy level?</label>
+    <select id="answer2" required>
+      <option value="">Please select</option>
+      <option value="option1">High</option>
+      <option value="option2">Low</option>
+      <option value="option3">Medium</option>
+    </select>
+
+    <br>
+
+    <label for="answer3">Question 3: How satisfied are you with your current situation?</label>
+    <select id="answer3" required>
+      <option value="">Please select</option>
+      <option value="option1">Very satisfied</option>
+      <option value="option2">Not satisfied</option>
+      <option value="option3">Somewhat satisfied</option>
+    </select>
+
+    <br>
+
+    <label for="answer4">Question 4: Think about a cherished memory from the past. What emotions does it evoke?</label>
+    <select id="answer4" required>
+      <option value="">Please select</option>
+      <option value="option1">Joyful and happy</option>
+      <option value="option2">sad</option>
+      <option value="option3">Nothing</option>
+    </select>
+    
+    
+    <br>
+
+    <label for="answer5">Question 5: How do you feel about meeting new people at a social event?</label>
+    <select id="answer5" required>
+      <option value="">Please select</option>
+      <option value="option1">Excited to make new friends</option>
+      <option value="option2">Not Interested</option>
+      <option value="option3">Indifferent or neutral.
+      </option>
+    </select>
+
+    <br>
+
+    <label for="answer6">Question 6: How do you feel when you accomplish something you've been working hard on?</label>
+    <select id="answer6" required>
+      <option value="">Please select</option>
+      <option value="option1">Proud and satisfied</option>
+      <option value="option2">Unsatisfied</option>
+      <option value="option3">Emotionless or neutral</option>
+    </select>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="calculateEmotion()">Detect Emotion</button>
+  </form>
+
+  <div id="result"></div>
+
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Emotion Wellness Partner</h2>
+            <p>You don't have to be positive all the time. It's perfectly okay to feel sad, angry, annoyed, frustrated, anxious, or scared. Having feelings doesn't make you a negative person. It makes you human.</p>
+          </div>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <div class="ftco-footer-widget mb-4 ml-md-5">
+            <h2 class="ftco-heading-2">Quick Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="about.html" class="py-2 d-block">About</a></li>
+              <li><a href="services.html" class="py-2 d-block">Services</a></li>
+              <li><a href="doctors.html" class="py-2 d-block">Professional Support</a></li>          
+              <li><a href="contact.html" class="py-2 d-block">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="{% static 'ramapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'ramapp/js/popper.min.js' %}"></script>
+<script src="{% static 'ramapp/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'ramapp/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'ramapp/js/aos.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'ramapp/js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'ramapp/js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'ramapp/js/scrollax.min.js' %}"></script>
+<script src="{% static 'ramapp/js/google-map.js' %}"></script>
+<script src="{% static 'ramapp/js/main.js' %}"></script>
+</body>
+</html>
