@@ -1,5 +1,5 @@
 import cv2
-import numpy as np
+import numpy as n
 from keras.models import model_from_json
 
 
