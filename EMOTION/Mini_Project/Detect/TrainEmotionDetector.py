@@ -1,7 +1,7 @@
 
 # import required packages
-import c
-from keras.models import Sequentiall
+import cv2
+from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Dropout, Flatten
 from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
