@@ -1,4 +1,4 @@
-import cv2
+import cv
 import numpy as np
 from keras.models import model_from_json
 
