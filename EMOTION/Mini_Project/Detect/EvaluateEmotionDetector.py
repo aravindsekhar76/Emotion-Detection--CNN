@@ -1,4 +1,4 @@
-import numpy as n
+import numpy as np
 from keras.models import model_from_json
 import matplotlib.pyplot as plt
 from keras.preprocessing.image import ImageDataGenerator
